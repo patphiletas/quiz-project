@@ -1,0 +1,107 @@
+/* ----- Style général  et les affichage des question----- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #8b3489;
+  color: #452727;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   height: 100vh;
+      /* hauteur du body est la hauteur totale de la fenêtre */ 
+}
+
+/* ----- Conteneur principal  de question dohr de 4 reponses ----- */
+ #quiz-container {
+  background-color: rgb(202, 123, 204);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(26, 25, 25, 0.1);
+  /* la carte prend 90% de la largeur de l’écran mais ne dépasse pas 400px (responsive). */
+  /* width: 90%;
+  max-width: 400px; */
+  text-align: center;
+} 
+
+/* ----- Question ----- */
+#question-text {
+  font-size: 19px;
+  /* espace etre le container de question et 4 */
+  margin-bottom: 20px;
+}
+
+/* ----- les 4 reponse ----- */
+#options-container {
+  display: flex;
+  flex-direction:column;
+  /* espace verical entre chaque bouton */
+  gap: 10px;
+}
+/* les 4 reponse */
+.options {
+  background-color: #ec9dd4;
+  
+  border: none;
+  /* espace intérieur du bouton */
+  padding: 10px; 
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s; 
+}
+/* cursor change la coulour pendant que on clique sur une reponse */
+ .options:hover:not(:disabled) {
+  background-color: #f3b6b6;
+} 
+
+/* ----- Boutons ----- */
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+/* 4 reponse dans dans les bouton */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+/* quand tu clique sur une option le bouton suivant change la coulour */
+#next-button {
+  background-color: #490c2d;
+  color: rgb(195, 208, 206);
+}
+
+#next-button:disabled {
+  background-color: #aaa;
+  cursor: pointer;
+}
+/* le bouton Rejouer */
+#replay-button {
+  background-color: #4a0f58;
+  color: white;
+}
+
+/* @media ouvre une regle qui s'applique que si la condition est vraie, 480px signifie appliquer ce code seulement au niveau de largeur de la fenetre */
+
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  #quiz-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #question-text {
+    font-size: 16px;
+  }
+}
